@@ -1,7 +1,38 @@
 package com.ayu.algorithms;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LeetCode_001 {
 
+    /**
+     * 两数之和
+     */
 
+    // 暴力枚举 时间复杂度O(n*n) 空间复杂度O(1)
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+
+    // 以时间换空间
+    public int[] twoSum2(int[] nums, int target) {
+        int len = nums.length;
+        Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>(len -1);
+        for (int i = 0; i < len; ++i) {
+            if (hashtable.containsKey(target - nums[i])) {
+                return new int[]{hashtable.get(target - nums[i]), i};
+            }
+            hashtable.put(nums[i], i);
+        }
+        return new int[0];
+    }
 
 }
