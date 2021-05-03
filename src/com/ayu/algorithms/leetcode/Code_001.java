@@ -1,12 +1,12 @@
-package com.ayu.algorithms;
+package com.ayu.algorithms.leetcode;
 
 import java.util.*;
 
-public class LeetCode_001 {
+public class Code_001 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> lists = LeetCode_001.threeSum2(nums);
+        List<List<Integer>> lists = Code_001.threeSum2(nums);
         System.out.println(lists);
     }
 
